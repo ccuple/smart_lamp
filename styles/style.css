@@ -34,13 +34,16 @@ footer{
 }
 
 h1 { 
-    color: #FF8C00; 
+    color: #008cff; 
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: 1.5px;
     margin-top: 0;
     margin-bottom: 10px;
     text-transform: uppercase;
+}
+h1 span{
+    color: #FF8C00; 
 }
 
 p { 
