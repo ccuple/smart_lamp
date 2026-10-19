@@ -1,0 +1,169 @@
+/* Базові стилі сторінки */
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    background-color: #121212; 
+    color: #FFFFFF;
+    padding: 50px 20px; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Загальний стиль контейнерів */
+.container { 
+    width: 100%;
+    background: #1A1A1A; 
+    border-radius: 24px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    border: 1px solid #2A2A2A;
+    box-sizing: border-box;
+}
+
+/* Специфічні стилі для головного блоку з кнопкою */
+.hero-container {
+    max-width: 450px; 
+    padding: 40px 30px; 
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h1 { 
+    color: #FF8C00; 
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+p { 
+    color: #A0A0A0; 
+    font-size: 16px; 
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+/* Кнопка завантаження */
+.btn-download { 
+    display: inline-block; 
+    background-color: #FF8C00; 
+    color: #121212; 
+    padding: 16px 40px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    border-radius: 50px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.btn-download:hover { 
+    background-color: #FFA500; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
+}
+
+.version-info {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #555555;
+}
+
+/* Заголовок блоку огляду */
+.features-title {
+    font-size: 24px;
+    color: #FF8C00;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Сітка для скріншотів всередині другого контейнера */
+.screenshots-grid {
+    display: grid;
+    /* На великих екранах (комп'ютерах) картки автоматично розтягуються у кілька рядів */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    padding: 30px 20px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Окрема картка скріншоту */
+.screenshot-card {
+    background: #121212; /* Робимо фон картки трохи темнішим за контейнер */
+    border: 1px solid #2A2A2A;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.screenshot-card:hover {
+    transform: translateY(-5px);
+    border-color: #FF8C00;
+}
+
+.screenshot-card img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background-color: #000;
+}
+
+.screenshot-card h3 {
+    font-size: 18px;
+    color: #FF8C00;
+    margin: 15px 0 8px 0;
+}
+
+.screenshot-card p {
+    font-size: 14px;
+    color: #A0A0A0;
+    margin: 0;
+    line-height: 1.4;
+}
+.screenshot-card p b{
+    color: #FF8C00;
+}
+/* Для планшетів та великих смартфонів (ширина екрана до 768px) — СУВОРО 2 КАРТКИ В РЯД */
+@media (max-width: 768px) {
+    .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px; /* Трохи менший відступ, щоб помістилися */
+        padding: 20px 10px;
+    }
+    
+    .screenshot-card {
+        padding: 15px; /* Зменшуємо внутрішні відступи карток */
+    }
+
+    .screenshot-card img {
+        max-width: 100%; /* Картинка адаптується під ширину картки */
+    }
+}
+
+/* Для звичайних смартфонів (ширина екрана до 480px) — СУВОРО 1 КАРТКА В РЯД */
+@media (max-width: 480px) {
+    .screenshots-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    .hero-container {
+        padding: 30px 20px; /* Зменшуємо головний контейнер на телефонах */
+    }
+}
