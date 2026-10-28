@@ -1,40 +1,41 @@
 /* Базові стилі сторінки */
-body { 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-    background-color: #121212; 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
     color: #FFFFFF;
-    padding: 50px 20px; 
+    padding: 50px 20px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-footer{
+
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 /* Загальний стиль контейнерів */
-.container { 
+.container {
     width: 100%;
-    background: #1A1A1A; 
-    border-radius: 24px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    background: #1A1A1A;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid #2A2A2A;
     box-sizing: border-box;
 }
 
 /* Специфічні стилі для головного блоку з кнопкою */
 .hero-container {
-    max-width: 450px; 
-    padding: 40px 30px; 
+    max-width: 450px;
+    padding: 40px 30px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-h1 { 
-    color: #008cff; 
+h1 {
+    color: #008cff;
     font-size: 32px;
     font-weight: 400;
     letter-spacing: 1.5px;
@@ -42,33 +43,34 @@ h1 {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-h1 span{
-    color: #FF8C00; 
+
+h1 span {
+    color: #FF8C00;
 }
 
-p { 
-    color: #A0A0A0; 
-    font-size: 16px; 
+p {
+    color: #A0A0A0;
+    font-size: 16px;
     line-height: 1.5;
     margin-bottom: 35px;
 }
 
 /* Кнопка завантаження */
-.btn-download { 
-    display: inline-block; 
-    background-color: #FF8C00; 
-    color: #121212; 
-    padding: 16px 40px; 
-    font-size: 16px; 
-    font-weight: bold; 
-    text-decoration: none; 
-    border-radius: 50px; 
-    transition: all 0.3s ease; 
+.btn-download {
+    display: inline-block;
+    background-color: #FF8C00;
+    color: #121212;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
 }
 
-.btn-download:hover { 
-    background-color: #FFA500; 
+.btn-download:hover {
+    background-color: #FFA500;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 140, 0, 0.5);
 }
@@ -104,12 +106,13 @@ p {
 
 /* Окрема картка скріншоту */
 .screenshot-card {
-    background: #121212; /* Робимо фон картки трохи темнішим за контейнер */
+    background: #121212;
+    /* Робимо фон картки трохи темнішим за контейнер */
     border: 1px solid #2A2A2A;
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -118,7 +121,7 @@ p {
     border-color: #FF8C00;
 }
 
-.screenshot-card img {
+.screenshot-card>img {
     width: 100%;
     max-width: 220px;
     height: auto;
@@ -139,34 +142,114 @@ p {
     margin: 0;
     line-height: 1.4;
 }
-.screenshot-card p b{
+
+.screenshot-card p b {
     color: #FF8C00;
 }
+
 /* Для планшетів та великих смартфонів (ширина екрана до 768px) — СУВОРО 2 КАРТКИ В РЯД */
 @media (max-width: 768px) {
     .screenshots-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px; /* Трохи менший відступ, щоб помістилися */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        /* Трохи менший відступ, щоб помістилися */
         padding: 20px 10px;
     }
-    
+
     .screenshot-card {
-        padding: 15px; /* Зменшуємо внутрішні відступи карток */
+        padding: 15px;
+        /* Зменшуємо внутрішні відступи карток */
     }
 
     .screenshot-card img {
-        max-width: 100%; /* Картинка адаптується під ширину картки */
+        max-width: 100%;
+        /* Картинка адаптується під ширину картки */
     }
 }
 
 /* Для звичайних смартфонів (ширина екрана до 480px) — СУВОРО 1 КАРТКА В РЯД */
 @media (max-width: 480px) {
     .screenshots-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .hero-container {
-        padding: 30px 20px; /* Зменшуємо головний контейнер на телефонах */
+        padding: 30px 20px;
+        /* Зменшуємо головний контейнер на телефонах */
+    }
+}
+
+/* Контейнер для правильного накладання картинок */
+.lamp-interactive-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 400px;
+    /* Ховає палець, коли він знаходиться нижче меж картини */
+}
+
+/* Картинка нічника */
+.lamp-image {
+    margin-top: 50%;
+    margin-bottom: 50%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Початкове позиціонування пальця та підключення нової анімації */
+.finger-overlay {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: 50%;
+    height: 7rem;
+    pointer-events: none;
+    /* mix-blend-mode: screen;  */
+    border: none;
+    background-color: #00000000;
+
+    /* Запуск анімації руху вгору без зміни розміру */
+    animation: slideUpAndTouch 3.5s infinite ease-in-out;
+}
+
+/* Анімація: поява знизу -> рух вгору -> утримання на кнопці -> зникнення */
+@keyframes slideUpAndTouch {
+    0% {
+        /* Палець зміщений сильно вниз (на 100px від кнопки) і повністю прозорий */
+        transform: translate(-50%, 50px);
+        opacity: 0;
+    }
+
+    20% {
+        /* Плавно стає видимим під час початку руху */
+        opacity: 1;
+    }
+
+    45% {
+        /* Палець доходить до кнопки (0px зміщення) і торкається її */
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    75% {
+        /* Палець затримується на кнопці (імітація затискання сенсора) */
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    90% {
+        /* Плавно зникає прямо на кнопці після утримання */
+        opacity: 0;
+    }
+
+    100% {
+        /* Повертається у вихідну нижню точку для повтору циклу */
+        transform: translate(-50%, 100px);
+        opacity: 0;
     }
 }
