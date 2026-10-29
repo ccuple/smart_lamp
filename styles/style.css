@@ -185,17 +185,22 @@ p {
     position: relative;
     display: inline-block;
     width: 100%;
-    max-width: 250px;
+    max-width: 220px;
     margin: 0 auto;
     overflow: hidden;
-    height: 400px;
+    height: auto;
     /* Ховає палець, коли він знаходиться нижче меж картини */
 }
 
 /* Картинка нічника */
 .lamp-image {
-    margin-top: 50%;
-    margin-bottom: 50%;
+    /* margin-top: 50%; */
+    /* margin-bottom: 50%; */
+    width: 100%;
+    /* max-width: 220px; */
+    height: auto;
+    /* border-radius: 12px; */
+    /* border: 1px solid #333; */
     width: 100%;
     height: auto;
     display: block;
@@ -204,7 +209,7 @@ p {
 /* Початкове позиціонування пальця та підключення нової анімації */
 .finger-overlay {
     position: absolute;
-    top: 44%;
+    top: 37%;
     left: 50%;
     width: 50%;
     height: 7rem;
@@ -251,5 +256,48 @@ p {
         /* Повертається у вихідну нижню точку для повтору циклу */
         transform: translate(-50%, 100px);
         opacity: 0;
+    }
+}
+/* Червоне світіння під пальцем */
+.glow-effect {
+    position: absolute;
+    /* Центруємо круг в області кнопки під пальцем */
+    top: 42%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Розмір червоної цятки */
+    width: 20px;
+    height: 20px;
+    
+    /* Створення ефекту м'якого розмитого світла */
+    background-color: rgba(255, 0, 0, 0.6); /* Напівпрозорий червоний */
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5); /* Розмиття навколо */
+    
+    pointer-events: none; /* Щоб круг не заважав клікам */
+    opacity: 0; /* Спочатку світло вимкнене */
+    
+    /* Синхронізуємо тривалість і циклічність з пальцем (3.5s) */
+    animation: fingerGlow 3.5s infinite ease-in-out;
+}
+
+/* Анімація появи світіння */
+@keyframes fingerGlow {
+    0%, 40% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5); /* Зменшене і вимкнене, поки палець іде вгору */
+    }
+    45% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Вмикається в момент торкання */
+    }
+    75% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1); /* Трохи пульсує під час утримання */
+    }
+    85%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5); /* Згасає разом із тим, як палець зникає */
     }
 }
