@@ -180,6 +180,13 @@ p {
     }
 }
 
+.ble_symbol{
+    height: 42px;
+    margin-right: 5px;
+    margin-left: 5px;
+    bottom: -9px;
+}
+
 /* Контейнер для правильного накладання картинок */
 .lamp-interactive-wrapper {
     position: relative;
